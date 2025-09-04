@@ -10,6 +10,7 @@ contrast_factor = 2.0                       # enhance letter contrast
 lower_threshold = 50                        # pixels <= this become 0 (background)
 upper_threshold = 200                       # pixels >= this become 255 (letters)
 
+# -------- PROCESS ALL IMAGES --------
 rows = []
 
 for filename in os.listdir(input_folder):
@@ -44,7 +45,7 @@ for filename in os.listdir(input_folder):
         # Flatten and append
         rows.append(pixels.flatten().tolist())
 
-# Save CSV with header
+# -------- SAVE TO CSV --------
 with open(output_csv, "w", newline="") as f:
     writer = csv.writer(f)
 
@@ -55,3 +56,4 @@ with open(output_csv, "w", newline="") as f:
     writer.writerows(rows)
 
 print(f"Processed {len(rows)} images with background cleaned, saved to {output_csv}")
+
