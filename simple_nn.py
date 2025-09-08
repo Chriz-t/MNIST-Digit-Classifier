@@ -28,7 +28,7 @@ Key details:
         * ReLU for the hidden layer
         * Softmax for the output layer
     - Loss function: Cross-Entropy Loss
-    - Optimizer: Gradient Descent
+    - Optimizer: Batch Gradient Descent
     - Parameters are initialized randomly and updated iteratively
 
 ------------------------------------------
