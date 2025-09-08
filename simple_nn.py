@@ -1,15 +1,72 @@
 """
-Digit Recognizer using Neural Networks (MNIST)
------------------------------------------------
+Neural Network for MNIST Digit Recognition
+==========================================
 
-This script implements a simple 2-layer feedforward neural network
-to classify handwritten digits from the MNIST dataset.
-All math operations (forward, backward, updates) are implemented manually
-using NumPy — no deep learning frameworks are used.
+PRESENTATION
+------------
+This Python program implements a simple feedforward neural network 
+from scratch using only:
+    - NumPy (matrix operations and math)
+    - Pandas (data loading)
+    - Matplotlib (visualization of digits)
 
-Author: Your Name
-Date: YYYY-MM-DD
+The network is trained on the MNIST dataset of handwritten digits 
+(28x28 grayscale images). All computations (forward propagation, 
+backpropagation, weight updates, and loss calculation) are coded 
+manually without using machine learning frameworks.
+
+------------------------------------------
+STRUCTURE OF THE NEURAL NETWORK
+------------------------------------------
+This is a forward propagating neural network with 3 layers:
+    - Input layer: 784 nodes (28 x 28 flattened pixels)
+    - Hidden layer: 10 nodes (with ReLU activation)
+    - Output layer: 10 nodes (with Softmax activation)
+
+Key details:
+    - Activation functions:
+        * ReLU for the hidden layer
+        * Softmax for the output layer
+    - Loss function: Cross-Entropy Loss
+    - Optimizer: Gradient Descent
+    - Parameters are initialized randomly and updated iteratively
+
+------------------------------------------
+USAGE GUIDE
+------------------------------------------
+1. Training:
+   The network is trained using the function `gradient_descent()`.
+   During training, accuracy and loss are printed every 50 iterations.
+
+2. Prediction:
+   Use `make_prediction()` to classify one or multiple samples.
+
+3. Visualization:
+   The function `test_prediction()` displays the digit image along 
+   with the predicted label.
+
+4. Evaluation:
+   After training, predictions are made on a test split and overall 
+   accuracy is displayed.
+
+------------------------------------------
+NOTATIONS
+------------------------------------------
+x       : Input data (features)
+y       : True labels
+z1, z2  : Linear outputs of hidden and output layers
+a1, a2  : Activations of hidden and output layers
+w1, w2  : Weight matrices of layer 1 and 2
+b1, b2  : Bias vectors of layer 1 and 2
+dz1, dz2: Error terms during backpropagation
+dw1, dw2: Gradients of weights
+db1, db2: Gradients of biases
+alpha   : Learning rate
+m       : Number of training samples
+
+------------------------------------------
 """
+
 
 import pandas as pd
 import numpy as np
