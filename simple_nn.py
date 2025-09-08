@@ -79,7 +79,7 @@ from matplotlib import pyplot as plt
 
 # Load dataset from CSV (Kaggle MNIST format).
 # The first column is the label, the rest are pixel values (28x28=784).
-data = pd.read_csv("Train data path")
+data = pd.read_csv("MNIST dataset path")
 data = np.array(data)
 
 m, n = data.shape
@@ -244,7 +244,12 @@ w1, b1, w2, b2 = gradient_descent(x_train, y_train, iterations=1000, alpha=0.1)
 # -----------------------
 # Testing
 # -----------------------
-test_prediction(5, w1, b1, w2, b2)
+
+# Pick a random test sample
+random_index = np.random.randint(0, x_test.shape[0])
+test_prediction(random_index, w1, b1, w2, b2)
+
+# Evaluate accuracy on the full test set
 test_predictions = make_prediction(x_test, w1, b1, w2, b2)
 print("Test Accuracy:", get_accuracy(test_predictions, y_test))
 
