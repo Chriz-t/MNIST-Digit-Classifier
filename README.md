@@ -61,7 +61,7 @@ Example output of a trained model predicting a random test digit:
    Alongside graphs, plain text reports show:  
    - Overall accuracy  
    - Accuracy for each digit class (0–9)  
-   <img src="Images/ClassAccuracy.png" width="500">
+   <img src="Images/ClassAccuracy.png" width="250">
 ---
 
 ## Usage Guide  
