@@ -23,16 +23,20 @@ Here are some MNIST sample images:
    - Input layer: 784 (28x28 flattened pixels)  
    - Hidden layer: 10 nodes, ReLU activation  
    - Output layer: 10 nodes, Softmax activation  
-   - Loss: Cross-entropy  
+   - Loss: Cross-entropy
+   - Parameter Initialization: Uniform random values in [-0.5, 0.5]  
+   - Optimizer: Batch Gradient Descent (BGD)  
 
 2. **Extended Network (784 → 128 → 64 → 10)**  
    - Input layer: 784 (28x28 flattened pixels)  
    - Hidden Layer 1: 128 nodes, ReLU activation  
    - Hidden Layer 2: 64 nodes, ReLU activation  
    - Output layer: 10 nodes, Softmax activation  
-   - Loss: Cross-entropy  
+   - Loss: Cross-entropy 
+   - Parameter Initialization: He Initialization (scaled Gaussian, √(2/fan_in))  
+   - Optimizer: Adam Optimizer (adaptive learning rate with momentum and RMSProp) 
 
-Both models are trained using **batch gradient descent**.  
+  
 
 Example output of a trained model predicting a random test digit:  
 
@@ -45,19 +49,19 @@ Example output of a trained model predicting a random test digit:
    During training, **training loss** and **validation loss** are tracked for every iteration.  
    These curves help visualize learning progress and detect overfitting.  
 
-   ![](Images/LossCurves.png)  
+   <img src="Images/LossCurves.png" width="500">
 
 2. **Error Distribution Across Classes**  
    A bar chart is generated showing the **percentage of errors for each digit class (0–9)**.  
    A red line indicates the overall error rate.  
 
-   ![](Images/ErrorDistribution.png)  
+   <img src="Images/ErrorDistribution.png" width="500">
 
 3. **Per-Class Accuracy and Overall Accuracy**  
    Alongside graphs, plain text reports show:  
    - Overall accuracy  
    - Accuracy for each digit class (0–9)  
-
+   <img src="Images/ClassAccuracy.png" width="500">
 ---
 
 ## Usage Guide  
@@ -66,14 +70,13 @@ Example output of a trained model predicting a random test digit:
    Training runs for a fixed number of iterations with gradient descent weight updates.  
 
 2. **Testing on Random Digits**  
-   Use `test_random_prediction_with_accuracy` to:  
+   Use `test_random_prediction` to:  
    - Show a random test digit  
-   - Display class probability distribution  
-   - Print overall accuracy and per-class accuracies  
+   - Display class probability distribution    
 
    Example output:  
 
-   <img src="Images/ProbabilityChart.png" width="500">  
+   <img src="Images/PredictionExample3.png" width="500">  
 
 3. **Error Analysis**  
    - Run `plot_class_errors_nn` to see class-wise error rates.  
