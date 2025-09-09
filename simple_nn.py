@@ -1,5 +1,5 @@
 """
-Neural Network for MNIST Digit Recognition
+Simple Neural Network for MNIST Digit Recognition
 ==========================================
 
 PRESENTATION
