@@ -40,7 +40,7 @@ Here are some MNIST sample images:
 
 Example output of a trained model predicting a random test digit:  
 
-<img src="Images/PredictionExample.png" width="422">  
+<img src="Images/PredictionExample.png" width="500">  
 
 ---
 
