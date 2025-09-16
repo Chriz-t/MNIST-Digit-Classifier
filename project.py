@@ -65,3 +65,7 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+
+#we want to implement an app for reading lip movements from a person who has lost the ability to speak and then in phase 1 we want to get live text on what they are saying in phase two we want live speach give me deatild steps to implement this project also point out the main difficulties and how to overcome them
+
+#give me code for in python opencv to implement preprossing in phase 1 to take input from webcam
